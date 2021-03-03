@@ -5,6 +5,13 @@ Batcher will collect 'jobs' until batchSize jobs are received and then execute t
 A timeout is passed to the batch creator. If no 'jobs' are received within the timeout, the batcher will execute a batch, if there are any jobs to execute.
 Batcher will echo 'timout' to the console if there are no jobs to execute.
 
+# motivation
+This library uses go-routines & concurrency extensively.
+Part of the motivation for this is to explore the challenges presented by concurrency.
+Conceptually, it is a bit more challenging, particularly keeping the queuing of channels well defined.
+
+Concurrency also makes testing considerably more difficult.
+Conclusion: use concurrency sparingly.
 
 ## How to Use
 
